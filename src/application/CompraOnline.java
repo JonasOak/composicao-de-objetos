@@ -25,11 +25,13 @@ public class CompraOnline {
 		String name = sc.nextLine();
 		System.out.printf("Email: ");
 		String email = sc.nextLine();
+		
 		System.out.printf("Data de aniversário (DD/MM/YYYY): ");
 		Date birthDate = sdf.parse(sc.nextLine());
 		System.out.printf("Digite o dado do pedido:\n");
 		System.out.printf("Status: ");
 		OrderStatus status = OrderStatus.valueOf(sc.nextLine());
+		
 		Order pedido = new Order(new Date(), status, new Client(name, email, birthDate));
 		OrderItem produto = null;
 		
@@ -45,6 +47,7 @@ public class CompraOnline {
 			System.out.printf("Quantidade: ");
 			Integer quantity = sc.nextInt();
 			sc.nextLine();
+			
 			produto = new OrderItem(quantity, productPrice, new Product(productName, productPrice));
 			pedido.addItem(produto);
 		}
